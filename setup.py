@@ -27,7 +27,7 @@ client = bdk.BlockchainConfig.ELECTRUM(
                  5,
                  None,
                  100
-             )   
+             )
          )
 
 wallet = bdk.Wallet(
@@ -61,15 +61,15 @@ rust_ext = RustExtension(
 
 setup(
     name = 'bdkpython',
-    version = '0.0.6.dev',
-    description="The Python language bindings for the bitcoindevkit",
+    version = '0.1.0.dev',
+    description="The Python language bindings for the Bitcoin Dev Kit",
     long_description=LONG_DESCRIPTION,
     long_description_content_type='text/markdown',
     rust_extensions=[rust_ext],
     zip_safe=False,
     packages=['bdkpython'],
     package_dir={ 'bdkpython': './src/bdkpython' },
-    url="https://github.com/thunderbiscuit/bdk-python",
+    url="https://github.com/bboot/bdk-python",
     author="Alekos Filini <alekos.filini@gmail.com>, Steve Myers <steve@notmandatory.org>",
     license="MIT or Apache 2.0",
 )

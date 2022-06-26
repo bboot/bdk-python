@@ -23,8 +23,8 @@ class TestSimpleBip84Wallet(unittest.TestCase):
             network=bdk.Network.TESTNET,
             database_config=db_config
         )
-        address = wallet.get_new_address()
-        self.assertEqual(address, "tb1qzg4mckdh50nwdm9hkzq06528rsu73hjxxzem3e")
+        address = wallet.get_address(bdk.AddressIndex.NEW)
+        self.assertEqual(address.address, "tb1qzg4mckdh50nwdm9hkzq06528rsu73hjxxzem3e")
 
     def test_wallet_balance(self):
         wallet = bdk.Wallet(
@@ -90,9 +90,8 @@ class TestBip84WatchWallet(unittest.TestCase):
             network=bdk.Network.TESTNET,
             database_config=db_config,
         )
-        #new_address = wallet.get_address(bdk.AddressIndex.LAST_UNUSED) # bdk-ffi 0.6.0
-        new_address = wallet.get_last_unused_address()
-        self.assertEqual(new_address, "tb1qkuge0xj8lmhv9vh0rckdgctv6a5x7707d0z9ky")
+        address = wallet.get_address(bdk.AddressIndex.LAST_UNUSED)
+        self.assertEqual(address.address, "tb1qkuge0xj8lmhv9vh0rckdgctv6a5x7707d0z9ky")
 
 
 if __name__ == '__main__':
