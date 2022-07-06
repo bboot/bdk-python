@@ -96,4 +96,3 @@ class TestBip84WatchWallet(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
